@@ -22,7 +22,7 @@
 
 
         <Button
-            android:id="@+id/btnDate"
+            android:id="@+id/ubtnDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -30,7 +30,7 @@
             android:text="date" />
 
         <Button
-            android:id="@+id/btnTime"
+            android:id="@+id/ubtnTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

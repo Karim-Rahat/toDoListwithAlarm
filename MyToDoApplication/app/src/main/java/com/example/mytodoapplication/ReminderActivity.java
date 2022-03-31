@@ -1,5 +1,6 @@
 package com.example.mytodoapplication;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.PendingIntent;
@@ -28,26 +29,42 @@ import java.util.List;
 //this class is to add the take the reminders from the user and inserts into database
 public class ReminderActivity extends AppCompatActivity {
 
-    Button mSubmitbtn, mDatebtn, mTimebtn;
+    Button mSubmitbtn;
+     Button mDatebtn;
+    Button mTimebtn;
     EditText mTitledit;
     String timeTonotify;
 
-    List<MainData> dataList,filteredDataList;;
+
 
     LinearLayoutManager linearLayoutManager;
     RoomDB database;
 
     MainAdapter mainAdapter;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminder);
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("key",0);
+        String gtitle= intent.getStringExtra("text");
+        String className=intent.getStringExtra("className");
+        String gdate= intent.getStringExtra("date");
+        String gtime= intent.getStringExtra("time");
 
-        mTitledit = (EditText) findViewById(R.id.editTitle);
-        mDatebtn = (Button) findViewById(R.id.btnDate);                                             //assigned all the material reference to get and set data
-        mTimebtn = (Button) findViewById(R.id.btnTime);
-        mSubmitbtn = (Button) findViewById(R.id.btnSbumit);
+        mTitledit = findViewById(R.id.editTitle);
+        mDatebtn = findViewById(R.id.btnDate);                                             //assigned all the material reference to get and set data
+        mTimebtn = findViewById(R.id.btnTime);
+        mSubmitbtn = findViewById(R.id.btnSbumit);
 
+        if(className.equals("update")){
+mTitledit.setText(gtitle);
+mDatebtn.setText(gdate);
+mTimebtn.setText(gtime);
+mSubmitbtn.setText("update");
+
+        }
         database=RoomDB.getInstance(this);
         mTimebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,17 +92,31 @@ public class ReminderActivity extends AppCompatActivity {
                 } else {
                     if (time.equals("time") || date.equals("date")) {                                               //shows toast if date and time are not selected
                         Toast.makeText(getApplicationContext(), "Please select date and time", Toast.LENGTH_SHORT).show();
-                    } else {
+                    }
+
+                    //to add data
+                    else if(className.equals("Add")) {
                         processinsert(title, date, time);
 
                     }
+                    //to update data
+                    else processupdate(id, title, date, time);
                 }
 
 
             }
         });
     }
+    private void processupdate(int uId,String title, String date, String time) {
+        MainData data=new MainData();
 
+        database.mainDao().update(uId,title,date,time);
+
+        //inserts the title,date,time into sql lite database
+        setAlarm(title, date, time);                                                                //calls the set alarm method to set alarm
+        mTitledit.setText("");
+        Toast.makeText(ReminderActivity.this,"Successfully updated!",Toast.LENGTH_LONG).show();
+    }
 
     private void processinsert(String title, String date, String time) {
         MainData data=new MainData();
@@ -96,11 +127,12 @@ public class ReminderActivity extends AppCompatActivity {
         //insert text in databse
         database.mainDao().insert(data);
 
-                    //inserts the title,date,time into sql lite database
+  //inserts the title,date,time into sql lite database
         setAlarm(title, date, time);                                                                //calls the set alarm method to set alarm
         mTitledit.setText("");
         Toast.makeText(ReminderActivity.this,"Successfully added!",Toast.LENGTH_LONG).show();
     }
+
 
     private void selectTime() {                                                                     //this method performs the time picker task
         Calendar calendar = Calendar.getInstance();

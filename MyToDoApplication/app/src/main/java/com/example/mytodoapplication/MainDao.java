@@ -26,7 +26,7 @@ public interface MainDao {
 
     //update
     @Query("UPDATE Table_name SET text =:sText,date=:sDate,time=:sTime WHERE ID = :sID")
-    void upate(int sID,String sText,String sDate,String sTime);
+    void update(int sID,String sText,String sDate,String sTime);
 
 
 

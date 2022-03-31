@@ -12,11 +12,10 @@ import android.database.sqlite.SQLiteDatabase;
 @Database(entities = {MainData.class},version = 2,exportSchema = false)
 
 public abstract class RoomDB extends RoomDatabase {
-    //cretae atabse instance
+
 
     private static RoomDB databse;
-
-    //define db name
+    
 
     private static String DATABASE_NAME="database";
 
@@ -30,7 +29,7 @@ public abstract class RoomDB extends RoomDatabase {
                     .build();
         }
 
-        //return db
+
         return databse;
     }
 

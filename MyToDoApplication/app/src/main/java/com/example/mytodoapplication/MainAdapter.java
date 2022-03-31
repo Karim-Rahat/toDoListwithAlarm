@@ -1,9 +1,15 @@
 package com.example.mytodoapplication;
 
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.PendingIntent;
+import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,13 +17,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
@@ -28,8 +42,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private  RoomDB database;
 
     AlertDialog.Builder builder;
-
-    //create constructor
 
 
     @SuppressLint("NotifyDataSetChanged")
@@ -67,13 +79,15 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         holder.btEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 //init main data
                 MainData d=dataList.get(holder.getAdapterPosition());
                 //get id
                 int sID = d.getID();
                 //get text
                 String sText = d.getText();
-
+                                       //access the time form the choose time button
                 //create dialog
                 Dialog dialog = new Dialog(context);
                 // set content view
@@ -91,7 +105,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 dialog.getWindow().setLayout(width,height);
 
                 //show dialog
+                Intent intent = new Intent(context.getApplicationContext(), ReminderActivity.class);
+                intent.putExtra("key",sID);
+                intent.putExtra("text",sText);
+                intent.putExtra("className","update");
+                intent.putExtra("date",data.getDate());
+                intent.putExtra("time",data.getTime());
 
+                context.startActivity(intent);
                 dialog.show();
 
                 //init and assign variable
@@ -109,24 +130,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
                     @Override
                     public void onClick(View v) {
-                        // dismiss dialog
 
 
-                        dialog.dismiss();
-                        //get upate text from edit text
-
-                        String uText=editText.getText().toString().trim();
-                        String gDate=data.getDate();
-                        String gTime=data.getTime();
-
-                        //update text in db
-
-                        database.mainDao().upate(sID,uText,gDate,gTime);
-                        //notify when data is updated
-
-                        dataList.clear();
-                        dataList.addAll(database.mainDao().getAll());
-                        notifyDataSetChanged();
 
 
                     }
@@ -136,6 +141,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
 
             }
+
+
         });
 
         holder.btDelete.setOnClickListener(new View.OnClickListener() {
@@ -199,6 +206,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             mTime =  itemView.findViewById(R.id.txtTime);
 
 
+
         }
     }
+
+
 }

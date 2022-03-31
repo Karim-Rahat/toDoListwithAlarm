@@ -38,7 +38,7 @@ public class AlarmBrodcast extends BroadcastReceiver {
         contentView.setOnClickPendingIntent(R.id.flashButton, pendingSwitchIntent);
         contentView.setTextViewText(R.id.message, text);
         contentView.setTextViewText(R.id.date, date);
-        mBuilder.setSmallIcon(R.drawable.alaram);
+        mBuilder.setSmallIcon(R.drawable.alarm);
         mBuilder.setAutoCancel(true);
         mBuilder.setOngoing(true);
         mBuilder.setAutoCancel(true);

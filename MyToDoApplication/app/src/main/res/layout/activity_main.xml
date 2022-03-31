@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,12 +10,8 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-<!--    <EditText-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/edit_text"-->
-<!--        android:hint="Enter your todo work"-->
-<!--        android:padding="12dp"/>-->
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,4 +41,7 @@
         android:layout_marginTop="8dp"
         tools:listitem="@layout/list_row_main"/>
 
+
+
 </LinearLayout>
+

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:id="@+id/layout"
         android:layout_width="fill_parent"
         android:layout_height="64dp"
@@ -12,7 +12,7 @@
         <Button
             android:id="@+id/flashButton"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:text="Snooze off" />

@@ -4,17 +4,30 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/drawable/alaram.xml" value="0.1" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/drawable/alarm.xml" value="0.1" />
         <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/drawable/edit_background.xml" value="0.1" />
         <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/activity_notification_message.xml" value="0.1" />
         <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/activity_reminder.xml" value="0.1" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/activity_second_nav.xml" value="0.1" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/app_bar_second_nav.xml" value="0.1" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/content_second_nav.xml" value="0.1" />
         <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/dialog_update.xml" value="0.161231884057971" />
         <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/list_row_main.xml" value="0.25" />
         <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/nav_header_main.xml" value="0.161231884057971" />
-        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/notification_layout.xml" value="0.5" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/nav_header_second_nav.xml" value="0.16893115942028986" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/notification_layout.xml" value="0.25" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/layout/toolbar.xml" value="0.33" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
         <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/menu/main.xml" value="0.1953125" />
         <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/menu/menu.xml" value="0.25" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/menu/second_nav.xml" value="0.1" />
+        <entry key="..\:/android studio/AndroidStudioProjects/Todo_App_In_Android_Java_With_Source_Code/MyToDoApplication/app/src/main/res/menu/toolbar.xml" value="0.1" />
       </map>
     </option>
   </component>

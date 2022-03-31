@@ -13,12 +13,16 @@ import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     EditText editText;
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
 
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,45 +77,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //get string from edit text
                 Intent intent = new Intent(getApplicationContext(), ReminderActivity.class);
+                intent.putExtra("className","Add");
                 startActivity(intent);
 
-//                String sText=editText.getText().toString().trim();
-//                if(!sText.equals("")){
-                    //when text is null
-                    //init main data
-//                    MainData data=new MainData();
-//                    //set text on main data
-//                    data.setText(sText);
-//                    //insert text in databse
-//                    database.mainDao().insert(data);
 
-                    // clear
-
-//                    editText.setText("");
-                    //notify when data is inserted
-
-//                    dataList.clear();
-
-
-//                    dataList.addAll(database.mainDao().getAll());
                     mainAdapter.notifyDataSetChanged();
-//
-//                }else{
-//                    builder= new AlertDialog.Builder(MainActivity.this);
-//                    //Setting message manually and performing action on button click
-//                    builder.setMessage("The text field must not be empty!!")
-//                            .setCancelable(false)
-//                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-//                                public void onClick(DialogInterface dialog, int id) {
-//                                    dialog.cancel();
-//                                }
-//                            });
-//                    //Creating dialog box
-//                    AlertDialog alert = builder.create();
-//                    //Setting the title manually
-//                    alert.setTitle("InvalidActionAlert");
-//                    alert.show();
-//                }
+
+
             }
         });
         btReset.setOnClickListener(new View.OnClickListener() {
